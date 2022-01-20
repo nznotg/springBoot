@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>상세 페이지</title>
+</head>
+<body>
+    <h1 th:text="${board.title}"></h1>
+    <p th:text="${board.content}"></p>
+
+    <a th:href="@{/board/delete(id=${board.id})}">삭제 </a><br>
+                <!-- 쿼리 스트링 방식=> delete?id=    -->
+    <a th:href="@{/board/modify/{id}(id = ${board.id})}">수정</a>
+                <!-- Path 방시기 => modify/바로 id값 붙음 -->
+</body>
+</html>
